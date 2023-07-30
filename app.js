@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 //* router
 const mealsRouter = require('./routes/mealsRouter');
@@ -10,7 +11,7 @@ PORT = process.env.PORT || 8000;
 
 
 const app = express();
-
+app.use(cors())
 
 app.use(express.json())
 
