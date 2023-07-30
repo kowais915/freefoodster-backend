@@ -1,5 +1,9 @@
 const express = require("express");
 const mongoose = require('mongoose');
+
+//* router
+const mealsRouter = require('./routes/mealsRouter');
+
 require('dotenv').config();
 PORT = process.env.PORT || 8000;
 
@@ -24,3 +28,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.get("/", (req, res)=>{
     res.json({msg: "Welcome to the FreeFoodster API"})
 })
+
+
+// routes
+app.use("/api/meals", mealsRouter);
