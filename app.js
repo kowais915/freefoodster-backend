@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require("cors");
 
 //* router
 const mealsRouter = require('./routes/mealsRouter');
@@ -14,6 +14,7 @@ const app = express();
 app.use(cors())
 
 app.use(express.json())
+app.use(cors())
 
 //* conntecting to mongodb
 mongoose.connect(process.env.MONGODB_URI)
